@@ -22,8 +22,8 @@ jobs:
           playwright install chromium --with-deps
 
       - name: Ruleaza botul
-        # run: python main.py run
-        run: .\run.bat prices --day today
+        run: python main.py run prices --day today
+        # run: .\run.bat prices --day today
         env:
           DULINK_EMAIL:    ${{ secrets.DULINK_EMAIL }}
           DULINK_PASSWORD: ${{ secrets.DULINK_PASSWORD }}
