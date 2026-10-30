@@ -10,8 +10,8 @@ Utilizare:
 """
 
 import os
-  config["dulink"]["email"]      = os.getenv("DULINK_EMAIL",    config["dulink"]["email"])
-  config["dulink"]["password"]   = os.getenv("DULINK_PASSWORD", config["dulink"]["password"])
+config["dulink"]["email"]      = os.getenv("DULINK_EMAIL",    config["dulink"]["email"])
+config["dulink"]["password"]   = os.getenv("DULINK_PASSWORD", config["dulink"]["password"])
 
 import asyncio, argparse, logging, logging.handlers, sys
 from pathlib import Path
