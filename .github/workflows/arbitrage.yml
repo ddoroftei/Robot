@@ -18,8 +18,6 @@ jobs:
 
       - name: Instaleaza dependente
         run: |    
-          python -m venv venv 
-          .\venv\Scripts\activate   
           pip install -r requirements.txt
           playwright install chromium --with-deps
 
