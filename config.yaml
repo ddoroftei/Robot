@@ -1,0 +1,113 @@
+# ============================================================
+# Dulink Arbitrage Bot - Configuratie
+# ============================================================
+
+dulink:
+  url: "https://www.dulink.dunext.com/login"       # URL-ul platformei Dulink
+  email: "Termohabitat"           # Contul tau Dulink
+  password: "OstroT132"                # Parola contului
+  plant_name: "Iberic Power Hill"     # Numele exact al plantei din Dulink
+
+
+  
+
+# ============================================================
+# Dulink Arbitrage Bot - Configuratie
+# ============================================================
+#
+# CE TREBUIE COMPLETAT DE TINE:
+#   1. Sectiunea [dulink]  ← date cont + selectoare browser
+#   2. Sectiunea [arbitrage] ← eficienta bateriei (optional)
+#   3. Sectiunea [scheduler] ← ora de rulare
+#
+# ============================================================
+
+
+  # --- SELECTOARE BROWSER (de completat dupa inspectare - vezi README) ---
+  selectors:
+    # Pagina de login
+    email_field:      "xpath=//input[@placeholder='Please enter your username or email.']"        # ← Campul unde scrii email-ul
+    password_field:   'input[type="password"]'     # ← Campul unde scrii parola
+    terms_checkbox:   '.el-checkbox.el-checkbox--default' # ← Bifarea "Sunt de acord cu termenii"
+    login_button:     'button[type="submit"]'      # ← Butonul de Login
+
+    # Navigare la planta
+    plants_menu:      'xpath=//*[@id="app"]/div/div[1]/div[2]/div[2]/div'           # ← Link/meniu catre lista de plante
+    plant_card:       '.plant-name'                # ← Elementul care contine numele plantei
+
+    # Setari baterie
+    settings_menu:    '.xpath=//*[@id="app"]/div/div[2]/section/div[2]/div[2]/div/div[3]/div[1]/div[2]'        # ← Link catre Settings
+    # selectr_strategy: 'xpath=//*[@id="app"]/div/div[2]/section/div[2]/div[2]/section/div/div/div/button[3]'
+    battery_section: '.work-mode-box card-title'
+    # battery_section:  '.details-footer'         # ← Link catre Battery/Schedule
+    pv_energy : 'xpath=//*[@id="app"]/div/div[2]/section/div[2]/div[2]/section/aside/div[2]'
+    
+
+    start_time_select: '.el-table_1_column_2.is-center.el-table__cell'   
+    end_time_select: '.el-table_1_column_3.is-center.el-table__cell'
+    type_select: '.el-table_1_column_4.is-center.el-table__cell'
+    
+    
+    # add_slot_button:  'xpath=//*[@id="el-id-6050-325"]/div/div[3]/div/form/div[2]/span'     # ← Butonul de adaugare interval
+    # # Selectoarele pentru tabel (copiaza-le cu F12 → Copy Selector)
+    # add_slot_button:    '#el-id-8345-46 > div > div.tou-table-box > div > form > div.add-box'   # butonul Add care adauga un rand nou
+    # start_time_select:  '#el-id-8345-46 > div > div.tou-table-box > div > form > div.el-table--fit.el-table--enable-row-hover.el-table--enable-row-transition.el-table--default.el-table.el-table--layout-fixed.is-scrolling-none > div.el-table__inner-wrapper > div.el-table__body-wrapper > div > div.el-scrollbar__wrap.el-scrollbar__wrap--hidden-default > div > table > tbody > tr:nth-child(2) > td.el-table_1_column_2.is-center.el-table__cell > div > div > div > div > div > div.el-select__selection > div.el-select__selected-item.el-select__placeholder.is-transparent'   # dropdown-ul Start Time
+    # end_time_select:    '#el-id-8345-46 > div > div.tou-table-box > div > form > div.el-table--fit.el-table--enable-row-hover.el-table--enable-row-transition.el-table--default.el-table.el-table--layout-fixed.is-scrolling-none > div.el-table__inner-wrapper > div.el-table__body-wrapper > div > div.el-scrollbar__wrap.el-scrollbar__wrap--hidden-default > div > table > tbody > tr:nth-child(2) > td.el-table_1_column_3.is-center.el-table__cell > div > div > div > div > div > div.el-select__selection > div.el-select__selected-item.el-select__placeholder.is-transparent'   # dropdown-ul End Time
+    # mode_select:        '#el-id-8345-46 > div > div.tou-table-box > div > form > div.el-table--fit.el-table--enable-row-hover.el-table--enable-row-transition.el-table--default.el-table.el-table--layout-fixed.is-scrolling-none > div.el-table__inner-wrapper > div.el-table__body-wrapper > div > div.el-scrollbar__wrap.el-scrollbar__wrap--hidden-default > div > table > tbody > tr:nth-child(2) > td.el-table_1_column_4.is-center.el-table__cell > div > div > div > div > div > div.el-select__selection > div.el-select__selected-item.el-select__placeholder'   # dropdown-ul Mode
+    # type_select:        '#el-id-8345-46 > div > div.tou-table-box > div > form > div.el-table--fit.el-table--enable-row-hover.el-table--enable-row-transition.el-table--default.el-table.el-table--layout-fixed.is-scrolling-none > div.el-table__inner-wrapper > div.el-table__body-wrapper > div > div.el-scrollbar__wrap.el-scrollbar__wrap--hidden-default > div > table > tbody > tr:nth-child(2) > td.el-table_1_column_5.is-center.el-table__cell > div > div > div > div > div > div.el-select__selection > div.el-select__selected-item.el-select__placeholder'   # dropdown-ul Type
+    # power_input:        "xpath=//input[@placeholder='Please enter ']"    # campul Maximum Power(kW)
+    
+
+    # # Ce valori apar in dropdown-ul Mode cand il deschizi?
+    # mode_value:     "Charge/Discharge"     # ← inlocuieste cu textul exact
+    
+
+    # # Ce valori apar in dropdown-ul Type cand il deschizi?
+    # type_charge_value:     "Charge"    # ← completeaza dupa ce deschizi dropdown-ul
+    # type_discharge_value:  "Discharge"    # ← completeaza dupa ce deschizi dropdown-ul
+
+    # Puterea maxima constanta
+    max_power_kw: 250
+
+
+    save_button:      'xpath=/html/body/div[9]/div/div/footer/div/button'    # ← Butonul de salvare
+
+# Strategia de arbitraj (complet automata)
+arbitrage:
+  # Eficienta round-trip a bateriei (ex: 0.90 = 90%)
+  # Influenteaza pragul minim de profit: descarci doar daca merita dupa pierderi
+  battery_efficiency: 0.90
+
+  # Moneda preturilor OPCOM
+  currency: "RON"   # RON sau EUR
+
+# Setarile de executie
+scheduler:
+  # Ora la care ruleaza botul zilnic
+  # OPCOM publica de obicei dupa ~12:00-13:00, dar poti seta mai devreme
+  # si botul va reincerca daca preturile nu sunt inca disponibile
+  run_time: "13:30"          # HH:MM - ora locala Bucuresti
+
+  # Numarul de reincercari daca preturile nu sunt inca publicate
+  retry_count: 5
+  retry_wait_minutes: 15     # Asteapta 15 min intre reincercari
+
+  # Executa si la pornire imediata (nu asteapta run_time)
+  run_on_start: false
+
+  timezone: "Europe/Bucharest"
+
+# Browser automation
+browser:
+  headless: true             # false = vezi browser-ul (pentru debug/testare)
+  slow_mo: 1000               # ms intre actiuni (mareste daca site-ul e lent)
+  timeout: 30000             # Timeout pagina in ms
+  screenshot_on_error: true  # Salveaza screenshot la eroare in logs/
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/arbitrage.log"
+  max_size_mb: 10
+  backup_count: 5
+

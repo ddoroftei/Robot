@@ -1,0 +1,24 @@
+# Dulink Arbitrage Bot - Dependente Python
+
+# Browser automation
+playwright>=1.40.0
+
+# Web scraping & HTTP
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Data processing
+pandas>=2.0.0
+openpyxl>=3.1.0     # Citire Excel (.xlsx) de la OPCOM
+xlrd>=2.0.0          # Citire Excel (.xls) de la OPCOM
+
+# Configuratie
+pyyaml>=6.0
+
+# Scheduling
+schedule>=1.2.0
+pytz>=2023.3
+
+# Utilitare
+colorlog>=6.7.0      # Logging colorat in terminal
