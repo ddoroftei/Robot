@@ -3008,3 +3008,30 @@ Exception: Login esuat! Verifica email/parola si selectorul login_button din con
 30.10.2026 09:40:21 | INFO     | Salvez setarile...
 30.10.2026 09:40:29 | INFO     | ✅ Setari salvate!
 30.10.2026 09:40:29 | INFO     | ✅ Program aplicat cu succes in Dulink!
+31.10.2026 01:01:05 | INFO     | Obtin preturi OPCOM PZU 15min pentru 31.10.2026...
+31.10.2026 01:01:22 | INFO     | ✅ 96 intervale obtinute pentru 31.10.2026
+31.10.2026 01:01:22 | INFO     | Media: 1508.74 RON/MWh | Intervale disponibile: 96/96
+31.10.2026 01:01:22 | INFO     | Sloturi incarcare: 0 | Sloturi descarcare: 5
+31.10.2026 01:01:22 | INFO     | Login la https://www.dulink.dunext.com/login...
+31.10.2026 01:01:36 | ERROR    | Eroare: Login esuat! Verifica email/parola si selectorul login_button din config.yaml
+Traceback (most recent call last):
+  File "C:\Users\Dani\Desktop\Robot\src\dulink.py", line 65, in apply_schedule
+    await self._login()
+  File "C:\Users\Dani\Desktop\Robot\src\dulink.py", line 148, in _login
+    raise Exception(
+        f"Login esuat! {err or 'Verifica email/parola si selectorul login_button din config.yaml'}"
+    )
+Exception: Login esuat! Verifica email/parola si selectorul login_button din config.yaml
+31.10.2026 01:01:36 | INFO     | Screenshot: logs/screenshot_error_20261031_010136.png
+31.10.2026 01:02:21 | INFO     | Obtin preturi OPCOM PZU 15min pentru 31.10.2026...
+31.10.2026 01:02:30 | INFO     | ✅ 96 intervale obtinute pentru 31.10.2026
+31.10.2026 01:02:30 | INFO     | Media: 1508.74 RON/MWh | Intervale disponibile: 96/96
+31.10.2026 01:02:30 | INFO     | Sloturi incarcare: 0 | Sloturi descarcare: 5
+31.10.2026 01:03:14 | INFO     | Obtin preturi OPCOM PZU 15min pentru 31.10.2026...
+31.10.2026 01:03:21 | INFO     | ✅ 96 intervale obtinute pentru 31.10.2026
+31.10.2026 01:03:21 | INFO     | Media: 1508.74 RON/MWh | Intervale disponibile: 96/96
+31.10.2026 01:03:21 | INFO     | Sloturi incarcare: 0 | Sloturi descarcare: 5
+31.10.2026 01:03:35 | INFO     | Obtin preturi OPCOM PZU 15min pentru 31.10.2026...
+31.10.2026 01:03:42 | INFO     | ✅ 96 intervale obtinute pentru 31.10.2026
+31.10.2026 01:03:42 | INFO     | Media: 1508.74 RON/MWh | Intervale disponibile: 96/96
+31.10.2026 01:03:42 | INFO     | Sloturi incarcare: 0 | Sloturi descarcare: 5

@@ -147,7 +147,7 @@ class ArbitrageEngine:
 
         # Sloturi pentru incarcare: sub media zilei
         charge_slots = sorted(
-            [s for s, p in prices.items() if p <= avg_price * 0.78]
+            [s for s, p in prices.items() if p <= avg_price * 0.85]
         )
 
         # Sloturi pentru descarcare: peste pragul de rentabilitate
