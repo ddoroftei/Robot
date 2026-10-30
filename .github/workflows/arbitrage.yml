@@ -16,10 +16,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Instaleaza dependente
-        run: |    
-          pip install -r requirements.txt
-          playwright install chromium --with-deps
+      # - name: Instaleaza dependente
+      #   run: |    
+      #     pip install -r requirements.txt
+      #     playwright install chromium --with-deps
 
       - name: Ruleaza botul
         run: python main.py run --day today
