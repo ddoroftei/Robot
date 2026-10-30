@@ -2,7 +2,7 @@ name: Dulink Arbitrage
 
 on:
   schedule:
-    - cron: '0 23 * * *'  # 00:00 ora Romaniei (vara), 23:00 iarna
+    - cron: '0 23 * * *'  # 00:00 ora Romaniei (vara), 23:00 iarna, Vara (martie-octombrie): miezul nopții România  = 22:00 UTC
   workflow_dispatch:        # permite rulare manuala din GitHub
 
 jobs:
