@@ -1,0 +1,29 @@
+name: Dulink Arbitrage
+
+on:
+  schedule:
+    - cron: '0 23 * * *'  # 13:00 ora Romaniei (UTC+2), zilnic,Iarna (octombrie-martie): miezul nopții România = 23:00 UTC, Vara (martie-octombrie): miezul nopții România = 22:00 UTC
+  workflow_dispatch:        # permite si rulare manuala din GitHub
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Instaleaza dependente
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium --with-deps
+
+      - name: Ruleaza botul
+        run: python main.py run
+        env:
+          DULINK_EMAIL:    ${{ secrets.DULINK_EMAIL }}
+          DULINK_PASSWORD: ${{ secrets.DULINK_PASSWORD }}
+          DULINK_PLANT:    ${{ secrets.DULINK_PLANT }}
