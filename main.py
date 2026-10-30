@@ -50,9 +50,9 @@ def load_config(path: str = "config.yaml") -> dict:
         sys.exit(1)
     with open(p, encoding="utf-8") as f:
         return yaml.safe_load(f)
-  import os
-  config["dulink"]["email"]      = os.getenv("DULINK_EMAIL",    config["dulink"]["email"])
-  config["dulink"]["password"]   = os.getenv("DULINK_PASSWORD", config["dulink"]["password"])
+import os
+    config["dulink"]["email"]      = os.getenv("DULINK_EMAIL",    config["dulink"]["email"])
+    config["dulink"]["password"]   = os.getenv("DULINK_PASSWORD", config["dulink"]["password"])
 
 
 def build_components(config: dict):
