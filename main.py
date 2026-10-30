@@ -10,7 +10,7 @@ Utilizare:
 """
 
 
-
+import os
 import asyncio, argparse, logging, logging.handlers, sys
 from pathlib import Path
 from datetime import datetime
@@ -49,10 +49,11 @@ def load_config(path: str = "config.yaml") -> dict:
         print(f"❌ Fisierul '{path}' nu exista! Editeaza config.yaml cu datele tale.")
         sys.exit(1)
     with open(p, encoding="utf-8") as f:
-        return yaml.safe_load(f)
-import os
-config["dulink"]["email"]= os.getenv("DULINK_EMAIL",config["dulink"]["email"])
-config["dulink"]["password"]= os.getenv("DULINK_PASSWORD",config["dulink"]["password"])
+        config = yaml.safe_load(f)
+    config["dulink"]["email"]      = os.getenv("DULINK_EMAIL",    config["dulink"]["email"])
+    config["dulink"]["password"]   = os.getenv("DULINK_PASSWORD", config["dulink"]["password"])
+    config["dulink"]["plant_name"] = os.getenv("DULINK_PLANT",    config["dulink"]["plant_name"])
+    return config
 
 
 def build_components(config: dict):
