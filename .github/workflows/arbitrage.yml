@@ -17,7 +17,9 @@ jobs:
           python-version: '3.11'
 
       - name: Instaleaza dependente
-        run: |       
+        run: |    
+          python -m venv venv 
+          .\venv\Scripts\activate   
           pip install -r requirements.txt
           playwright install chromium --with-deps
 
