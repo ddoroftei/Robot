@@ -17,12 +17,14 @@ jobs:
           python-version: '3.11'
 
       - name: Instaleaza dependente
-        run: |
+        run: python -m venv venv                                         
+         .\venv\Scripts\activate        
           pip install -r requirements.txt
           playwright install chromium --with-deps
 
       - name: Ruleaza botul
-        run: python main.py run
+        # run: python main.py run
+        run: .\run.bat prices --day today
         env:
           DULINK_EMAIL:    ${{ secrets.DULINK_EMAIL }}
           DULINK_PASSWORD: ${{ secrets.DULINK_PASSWORD }}
