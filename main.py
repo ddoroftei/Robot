@@ -52,7 +52,6 @@ def load_config(path: str = "config.yaml") -> dict:
         config = yaml.safe_load(f)
     config["dulink"]["email"]      = os.getenv("DULINK_EMAIL",    config["dulink"]["email"])
     config["dulink"]["password"]   = os.getenv("DULINK_PASSWORD", config["dulink"]["password"])
-    config["dulink"]["plant_name"] = os.getenv("DULINK_PLANT",    config["dulink"]["plant_name"])
     return config
 
 
