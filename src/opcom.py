@@ -306,7 +306,7 @@ class OPCOMScraper:
         for slot in sorted(prices.keys()):
             p = prices[slot]
             marker = ""
-            if p <= avg * 0.85:
+            if p <= avg * 0.85:  #de modificat si in arbitrage.py
                 marker = "🔋 ieftin"
             elif p >= avg * 1.30:
                 marker = "⚡ scump"
